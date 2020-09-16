@@ -60,7 +60,7 @@ class Main extends React.Component {
               this.setState({ zipCode: zipCode });
             })
             .then(() => {
-              this.getLocalGovt();
+              //this.getLocalGovt();
             });
         },
         (error) => console.log(error)
@@ -144,7 +144,7 @@ class Main extends React.Component {
   onManualRefreshClick = () => {
     this.getLocalIssues();
     //TESTING COMMENT API REQUEST
-    alert("Testing API Request");
+    // alert("Testing API Request");
   };
 
   setSelectedIssue = (issue) => {
