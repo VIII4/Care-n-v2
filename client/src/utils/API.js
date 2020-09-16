@@ -9,8 +9,7 @@ export default {
   // Get Local Government Contacts
   getGovContacts: function (zipCode) {
     return axios.get(
-      `https://www.googleapis.com/civicinfo/v2/representatives?includeOffices=true&levels=adminstrativeArea1&key=${API_KEY}&address=` +
-        zipCode
+      `https://www.googleapis.com/civicinfo/v2/representatives?includeOffices=true&levels=administrativeArea1&key=AIzaSyAjJP4OylQOMoWdiaIOZoTkfm_WwLeeR7g&address=${zipCode}`
     );
   },
 
