@@ -18,7 +18,7 @@ export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
         <span id="profile-button">
-          <a onClick={buttonAlert}>
+          <a className="no-select" onClick={buttonAlert}>
             <UserProfileButton size={size} />
           </a>
         </span>
@@ -28,15 +28,15 @@ export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
       <div id="right-buttons-list" className="UIoverlay align-self-end">
         <ul className="button-list ">
           <li className="button-list-item d-flex justify-content-end">
-            <a onClick={buttonAlert}>
+            <a className="no-select" onClick={buttonAlert}>
               <IssueListButton size={"10vh"} />
             </a>
-            <a onClick={buttonAlert}>
+            <a className="no-select" onClick={buttonAlert}>
               <RefreshButton size={"8vw"} />
             </a>
           </li>
           <li className="button-list-item">
-            <a onClick={buttonAlert}>
+            <a className="no-select" onClick={buttonAlert}>
               <NewIssueButton size={"40vw"} />
             </a>
           </li>
