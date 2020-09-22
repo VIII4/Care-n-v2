@@ -1,27 +1,33 @@
 #UIcontainer {
-  padding: 1rem;
-  position: absolute;
   z-index: 10;
 }
 
-.rowOne {
+.UIoverlay {
+  z-index: 10;
+}
+
+.button-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #1c2331;
+}
+
+.button-list-item {
+  margin-top: 0.5rem;
+}
+
+.button-anchor {
+}
+
+#right-buttons-list {
   position: absolute;
-  top: 80vh;
-  left: 75vw;
+  right: 1.5rem;
+  bottom: 3rem;
 }
 
-.rowTwo {
+#profile-button {
   position: absolute;
-  top: 85vh;
-}
-
-.right {
-  position: relative;
-  top: 84vh;
-  left: 60vw;
-}
-
-.test {
-  position: relative;
-  top: 84vh;
+  left: 1.5rem;
+  bottom: 2.5rem;
 }

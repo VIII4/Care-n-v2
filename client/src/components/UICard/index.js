@@ -9,19 +9,34 @@ import UserProfileButton from "../UIButtons/UserProfileButton";
 export default function UICard(props) {
   const size = "15vw";
   return (
-    <div id="UIcontainer">
-      <a>
-        <IssueListButton size={size} />
-      </a>
-      <a>
-        <RefreshButton size={"10vw"} />
-      </a>
-      <a>
-        <UserProfileButton size={size} />
-      </a>
-      <a>
-        <NewIssueButton size={"25vw"} />
-      </a>
+    <div id="UIcontainer" class="d-flex">
+      {/* Single Button on Left */}
+      <div class="UIoverlay align-self-end">
+        <span id="profile-button">
+          <a>
+            <UserProfileButton size={size} />
+          </a>
+        </span>
+      </div>
+
+      {/* List of buttons on Right */}
+      <div id="right-buttons-list" class="UIoverlay align-self-end">
+        <ul class="button-list ">
+          <li class="button-list-item d-flex justify-content-end">
+            <a class="button-anchor">
+              <IssueListButton size={"9vh"} />
+            </a>
+            <a class="button-anchor">
+              <RefreshButton size={"8vw"} />
+            </a>
+          </li>
+          <li class="button-list-item">
+            <a class="button-anchor">
+              <NewIssueButton size={"40vw"} />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
