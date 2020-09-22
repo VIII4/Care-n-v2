@@ -17,7 +17,7 @@
   margin-top: 0.5rem;
 }
 
-.no-select {
+.ui-button {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -37,4 +37,8 @@
   position: absolute;
   left: 1.5rem;
   bottom: 2rem;
+}
+
+.ui-button :active {
+  filter: drop-shadow(0rem 0rem 0.5rem #245c70);
 }

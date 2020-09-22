@@ -9,16 +9,14 @@ import UserProfileButton from "../UIButtons/UserProfileButton";
 export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
   const size = "15vw";
 
-  function buttonAlert() {
-    alert("button Pressed");
-  }
+  function buttonAlert() {}
 
   return (
     <div id="UIcontainer" className="d-flex">
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
         <span id="profile-button">
-          <a className="no-select" onClick={buttonAlert}>
+          <a className="ui-button" onClick={buttonAlert}>
             <UserProfileButton size={size} />
           </a>
         </span>
@@ -28,15 +26,15 @@ export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
       <div id="right-buttons-list" className="UIoverlay align-self-end">
         <ul className="button-list ">
           <li className="button-list-item d-flex justify-content-end">
-            <a className="no-select" onClick={buttonAlert}>
+            <a className="ui-button" onClick={buttonAlert}>
               <IssueListButton size={"10vh"} />
             </a>
-            <a className="no-select" onClick={buttonAlert}>
+            <a className="ui-button" onClick={buttonAlert}>
               <RefreshButton size={"8vw"} />
             </a>
           </li>
           <li className="button-list-item">
-            <a className="no-select" onClick={buttonAlert}>
+            <a className="ui-button" onClick={buttonAlert}>
               <NewIssueButton size={"40vw"} />
             </a>
           </li>
