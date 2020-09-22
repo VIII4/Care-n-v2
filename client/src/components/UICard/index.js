@@ -11,7 +11,7 @@ let size;
 //Helper function for media querie, set responsive size of UI
 const checkSize = () => {
   alert("screen width = " + window.screen.width);
-  if (window.matchMedia("(max-width: 380px)").matches) {
+  if (window.matchMedia("(max-width: 420px)").matches) {
     //alert("Mobile");
     size = 0.4;
   } else if (window.matchMedia("(max-width: 1024px)").matches) {
