@@ -2,72 +2,76 @@
 /* css variables */
 /*               */
 * {
-    --cardZindex: 4;
-    
-    --transparentBackground: rgba(255, 255, 255, 0);
-    --translucentBackground: rgba(211, 211, 211, .25);
+  --cardZindex: 5;
 
-    --boxShadowSettings: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --transparentBackground: rgba(255, 255, 255, 0);
+  --translucentBackground: rgba(211, 211, 211, 0.25);
+
+  --boxShadowSettings: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* format card parent */
 .cardContainer {
-    /* coordinate */
-    z-index: var(--cardZindex);
-    position: absolute; /* super important */
+  /* coordinate */
+  z-index: var(--cardZindex);
+  position: absolute; /* super important */
 
-    /* size */
-    width: 100vw;
-    height: 100vh;
+  /* size */
+  width: 100vw;
+  height: 100vh;
 
-    /* offset */
-    padding-top: 64px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 64px;
+  /* offset */
+  padding-top: 64px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 64px;
 
-    /* text formatting */
-    display: block;
-    text-align: left;
-    
-    /* color/styling */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.15));
-    backdrop-filter: blur(3px);
+  /* text formatting */
+  display: block;
+  text-align: left;
+
+  /* color/styling */
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.15)
+  );
+  backdrop-filter: blur(3px);
 }
 
 /* format card children (contents) */
 .textBlock {
-    /* display controls whether each item
+  /* display controls whether each item
        item is on the same line or stacked */
-    display: block;
-    color: black;
+  display: block;
+  color: black;
 }
 
 .cardInnards {
-    display: block;
+  display: block;
 }
 .cardInnards input {
-    float: right;
+  float: right;
 }
 
 .headerContainer {
-    position: relative;
-    padding-top: 32px;
-    padding-bottom: 16px;
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 16px;
 
-    line-height: 1px;
-    border-bottom: 3px solid #000;
+  line-height: 1px;
+  border-bottom: 3px solid #000;
 }
 .labelContainer {
-    position: relative;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    display: block;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: block;
 }
 .labelContainer button {
-    float: right;
+  float: right;
 }
 
 .bold {
-    font-weight: bolder;
+  font-weight: bolder;
 }
