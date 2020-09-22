@@ -34,7 +34,7 @@ class App extends React.Component {
             />
           </Switch>
 
-          <ContextBtn />
+          {/* <ContextBtn /> */}
         </div>
       </Router>
     );

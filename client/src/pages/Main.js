@@ -1,6 +1,7 @@
 import React from "react";
 import Map from "../components/Map";
 import Card from "../components/Card";
+import UICard from "../components/UICard";
 import RefreshBtn from "../components/RefreshBtn";
 import API from "../utils/API";
 
@@ -284,7 +285,8 @@ class Main extends React.Component {
       <div>
         {/* visibility can be set in css,but for 
             clarity it is done here instead */}
-        <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} />
+        <UICard></UICard>
+        {/* <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} /> */}
         <Card
           zipCode={zipCode}
           localGovt={localGovt}

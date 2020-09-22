@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-export default function UserProfileButton() {
+export default function UserProfileButton({ size }) {
   return (
     <>
       <svg
-        width="144.16"
-        height="100"
+        width={size}
+        height="auto"
         viewBox="0 0 38.142 26.458"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -21,7 +21,7 @@ export default function UserProfileButton() {
           stroke-width=".265"
           text-anchor="middle"
           word-spacing="0"
-          style="line-height:1.25"
+          style={{ lineHeight: 1.25 }}
           transform="translate(-.65 -.657)"
         >
           <tspan x="6.09" y="18.796">

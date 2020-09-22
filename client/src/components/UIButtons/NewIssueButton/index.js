@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-export default function NewIssueButton() {
+export default function NewIssueButton({ size }) {
   return (
     <>
       <svg
-        width="380"
-        height="80"
+        width={size}
+        height="auto"
         viewBox="0 0 100.54 21.167"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -37,7 +37,7 @@ export default function NewIssueButton() {
             stroke-width=".265"
             text-anchor="middle"
             word-spacing="0"
-            style="line-height:0"
+            style={{ lineHeight: 0 }}
           >
             <tspan x="31.925" y="18.094" fill="#fff" font-family="Calibri">
               NEW ISSUE

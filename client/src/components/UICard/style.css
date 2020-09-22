@@ -1,0 +1,27 @@
+#UIcontainer {
+  padding: 1rem;
+  position: absolute;
+  z-index: 10;
+}
+
+.rowOne {
+  position: absolute;
+  top: 80vh;
+  left: 75vw;
+}
+
+.rowTwo {
+  position: absolute;
+  top: 85vh;
+}
+
+.right {
+  position: relative;
+  top: 84vh;
+  left: 60vw;
+}
+
+.test {
+  position: relative;
+  top: 84vh;
+}

@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
 
-export default function ListIssueButton() {
+export default function ListIssueButton({ size }) {
   return (
     <>
       <svg
-        width="5rem"
+        width={size}
         height="auto"
         viewBox="0 0 52.917 21.167"
         xmlns="http://www.w3.org/2000/svg"

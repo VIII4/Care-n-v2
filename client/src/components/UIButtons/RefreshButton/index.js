@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-export default function RefreshButton() {
+export default function RefreshButton({ size }) {
   return (
     <>
       <svg
-        width="72"
-        height="72"
+        width={size}
+        height="auto"
         viewBox="0 0 19.05 19.05"
         xmlns="http://www.w3.org/2000/svg"
       >
