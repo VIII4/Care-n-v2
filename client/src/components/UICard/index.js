@@ -6,12 +6,12 @@ import NewIssueButton from "../UIButtons/NewIssueButton";
 import RefreshButton from "../UIButtons/RefreshButton";
 import UserProfileButton from "../UIButtons/UserProfileButton";
 
-export default function UICard(props) {
+export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
   const size = "15vw";
   return (
-    <div id="UIcontainer" class="d-flex">
+    <div id="UIcontainer" className="d-flex">
       {/* Single Button on Left */}
-      <div class="UIoverlay align-self-end">
+      <div className="UIoverlay align-self-end">
         <span id="profile-button">
           <a>
             <UserProfileButton size={size} />
@@ -20,18 +20,18 @@ export default function UICard(props) {
       </div>
 
       {/* List of buttons on Right */}
-      <div id="right-buttons-list" class="UIoverlay align-self-end">
-        <ul class="button-list ">
-          <li class="button-list-item d-flex justify-content-end">
-            <a class="button-anchor">
-              <IssueListButton size={"9vh"} />
+      <div id="right-buttons-list" className="UIoverlay align-self-end">
+        <ul className="button-list ">
+          <li className="button-list-item d-flex justify-content-end">
+            <a>
+              <IssueListButton size={"10vh"} />
             </a>
-            <a class="button-anchor">
+            <a onClick={onManualRefreshClick}>
               <RefreshButton size={"8vw"} />
             </a>
           </li>
-          <li class="button-list-item">
-            <a class="button-anchor">
+          <li className="button-list-item">
+            <a>
               <NewIssueButton size={"40vw"} />
             </a>
           </li>

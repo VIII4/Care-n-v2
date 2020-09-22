@@ -6,7 +6,7 @@ export default function ListIssueButton({ size }) {
     <>
       <svg
         width={size}
-        height="auto"
+        
         viewBox="0 0 52.917 21.167"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -15,12 +15,12 @@ export default function ListIssueButton({ size }) {
           x="37.506"
           y="18.146"
           fill="#fff"
-          font-family="sans-serif"
-          font-size="14.111"
-          letter-spacing=".529"
-          stroke-width=".265"
-          text-anchor="middle"
-          word-spacing="0"
+          fontFamily="sans-serif"
+          fontSize="14.111"
+          letterSpacing=".529"
+          strokeWidth=".265"
+          textAnchor="middle"
+          wordSpacing="0"
           style={{ lineHeight: 0 }}
           transform="translate(-5.292 -2.638)"
         >
@@ -28,13 +28,13 @@ export default function ListIssueButton({ size }) {
             x="37.77"
             y="18.146"
             dx="0 0 0 0"
-            font-family="Calibri"
+            fontFamily="Calibri"
             style={{ lineHeight: 0 }}
           >
             <tspan
               dx="0"
               rotate="0 0 0 0 0"
-              word-spacing=".529"
+              wordSpacing=".529"
               style={{ lineHeight: 0 }}
             >
               LIST
@@ -43,7 +43,7 @@ export default function ListIssueButton({ size }) {
         </text>
         <path
           d="M5.104 5.87a.754.754 0 00-.754.754v.753c0 .416.338.754.754.754h.753a.754.754 0 00.754-.754v-.753a.754.754 0 00-.754-.753zm0 3.767a.753.753 0 00-.754.753v.754c0 .416.338.753.754.753h.753a.753.753 0 00.754-.753v-.754a.753.753 0 00-.754-.753zm0 3.766a.754.754 0 00-.754.754v.752c0 .417.338.754.754.754h.753a.754.754 0 00.754-.754v-.752a.754.754 0 00-.754-.754zm3.013-7.532a.754.754 0 00-.754.753v.753c0 .416.338.754.754.754h7.531a.754.754 0 00.754-.754v-.753a.754.754 0 00-.754-.753zm0 3.766a.753.753 0 00-.754.753v.754c0 .416.338.753.754.753h7.531a.753.753 0 00.754-.753v-.754a.753.753 0 00-.754-.753zm0 3.766a.754.754 0 00-.754.754v.752c0 .417.338.754.754.754h7.531a.754.754 0 00.754-.754v-.752a.754.754 0 00-.754-.754z"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           fill="#fff"
         />
       </svg>

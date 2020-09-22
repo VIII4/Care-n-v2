@@ -6,7 +6,6 @@ export default function UserProfileButton({ size }) {
     <>
       <svg
         width={size}
-        height="auto"
         viewBox="0 0 38.142 26.458"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -15,12 +14,12 @@ export default function UserProfileButton({ size }) {
           x="6.09"
           y="18.796"
           fill="#fff"
-          font-family="sans-serif"
-          font-size="9.878"
-          letter-spacing="0"
-          stroke-width=".265"
-          text-anchor="middle"
-          word-spacing="0"
+          fontFamily="sans-serif"
+          fontSize="9.878"
+          letterSpacing="0"
+          strokeWidth=".265"
+          textAnchor="middle"
+          wordSpacing="0"
           style={{ lineHeight: 1.25 }}
           transform="translate(-.65 -.657)"
         >

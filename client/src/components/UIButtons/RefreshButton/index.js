@@ -6,7 +6,7 @@ export default function RefreshButton({ size }) {
     <>
       <svg
         width={size}
-        height="auto"
+        
         viewBox="0 0 19.05 19.05"
         xmlns="http://www.w3.org/2000/svg"
       >

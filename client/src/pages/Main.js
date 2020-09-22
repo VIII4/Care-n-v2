@@ -285,7 +285,10 @@ class Main extends React.Component {
       <div>
         {/* visibility can be set in css,but for 
             clarity it is done here instead */}
-        <UICard></UICard>
+        <UICard
+          onManualRefreshClick={this.onManualRefreshClick}
+          onReportIssueClick={this.onReportIssueClick}
+        ></UICard>
         {/* <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} /> */}
         <Card
           zipCode={zipCode}
