@@ -1,12 +1,12 @@
-import React, { useState, Component } from "react";
+import React from "react";
 import "./style.css";
 
-export default function ListIssueButton({ textColor, backgroundColor }) {
+export default function ListIssueButton() {
   return (
     <>
       <svg
-        width="200"
-        height="80"
+        width="5rem"
+        height="auto"
         viewBox="0 0 52.917 21.167"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -21,7 +21,7 @@ export default function ListIssueButton({ textColor, backgroundColor }) {
           stroke-width=".265"
           text-anchor="middle"
           word-spacing="0"
-          style="line-height:0"
+          style={{ lineHeight: 0 }}
           transform="translate(-5.292 -2.638)"
         >
           <tspan
@@ -29,13 +29,13 @@ export default function ListIssueButton({ textColor, backgroundColor }) {
             y="18.146"
             dx="0 0 0 0"
             font-family="Calibri"
-            style="line-height:0"
+            style={{ lineHeight: 0 }}
           >
             <tspan
               dx="0"
               rotate="0 0 0 0 0"
               word-spacing=".529"
-              style="line-height:0"
+              style={{ lineHeight: 0 }}
             >
               LIST
             </tspan>
