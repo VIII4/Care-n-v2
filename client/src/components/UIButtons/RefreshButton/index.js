@@ -2,11 +2,13 @@ import React from "react";
 import "./style.css";
 
 export default function RefreshButton({ size }) {
+  const nativeWidth = 72;
+  let resize = size * nativeWidth;
+
   return (
     <>
       <svg
-        width={size}
-        
+        width={resize}
         viewBox="0 0 19.05 19.05"
         xmlns="http://www.w3.org/2000/svg"
       >

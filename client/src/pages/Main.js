@@ -144,8 +144,8 @@ class Main extends React.Component {
   //#region Handler Methods
   onManualRefreshClick = () => {
     this.getLocalIssues();
-    //TESTING COMMENT API REQUEST
-    // alert("Testing API Request");
+
+    alert("Manual Refresh");
   };
 
   setSelectedIssue = (issue) => {

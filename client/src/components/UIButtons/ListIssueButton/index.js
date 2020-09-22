@@ -2,11 +2,13 @@ import React from "react";
 import "./style.css";
 
 export default function ListIssueButton({ size }) {
+  const nativeWidth = 200;
+  let resize = size * nativeWidth;
+
   return (
     <>
       <svg
-        width={size}
-        
+        width={resize + "px"}
         viewBox="0 0 52.917 21.167"
         xmlns="http://www.w3.org/2000/svg"
       >

@@ -2,11 +2,13 @@ import React from "react";
 import "./style.css";
 
 export default function NewIssueButton({ size }) {
+  const nativeWidth = 380;
+  let resize = size * nativeWidth;
+
   return (
     <>
       <svg
-        width={size}
-        
+        width={resize}
         viewBox="0 0 100.54 21.167"
         xmlns="http://www.w3.org/2000/svg"
       >

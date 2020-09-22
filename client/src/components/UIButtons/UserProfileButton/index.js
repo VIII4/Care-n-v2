@@ -2,10 +2,13 @@ import React from "react";
 import "./style.css";
 
 export default function UserProfileButton({ size }) {
+  const nativeWidth = 144;
+  let resize = size * nativeWidth;
+
   return (
     <>
       <svg
-        width={size}
+        width={resize}
         viewBox="0 0 38.142 26.458"
         xmlns="http://www.w3.org/2000/svg"
       >
