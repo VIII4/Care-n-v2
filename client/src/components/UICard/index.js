@@ -15,7 +15,7 @@ const checkSize = () => {
     size = 0.4;
   } else if (window.matchMedia("(max-width: 420px)").matches) {
     //alert("Mobile");
-    size = 0.55;
+    size = 0.45;
   } else if (window.matchMedia("(max-width: 1024px)").matches) {
     //alert("tablet");
     size = 0.8;
