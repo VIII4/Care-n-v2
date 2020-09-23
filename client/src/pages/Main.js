@@ -33,6 +33,9 @@ class Main extends React.Component {
       localIssues: [],
       // Current Issue Selected
       selectedIssue: null,
+
+      //Test UI
+      showReportPanel: false,
     };
   }
 
@@ -262,6 +265,12 @@ class Main extends React.Component {
       .catch((err) => console.log(err));
   };
 
+  //test
+  toggleReportPanel = () => {
+    let toggle = !this.state.showReportPanel;
+    this.setState({ showReportPanel: toggle });
+  };
+
   //#endregion
 
   //Life Cycle Events
@@ -279,6 +288,8 @@ class Main extends React.Component {
       selectedIssue,
       zipCode,
       localGovt,
+      // Test
+      showReportPanel,
     } = this.state;
 
     return (
@@ -288,6 +299,7 @@ class Main extends React.Component {
         <UICard
           onManualRefreshClick={this.onManualRefreshClick}
           onReportIssueClick={this.onReportIssueClick}
+          toggleReportPanel={this.toggleReportPanel}
         ></UICard>
         {/* <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} /> */}
         <Card
@@ -311,6 +323,9 @@ class Main extends React.Component {
           onCommentSubmission={this.onCommentSubmission}
           onResolveClick={this.onReportIssueClick}
           submitIssueReport={this.submitIssueReport}
+          // Test
+          showReportPanel={showReportPanel}
+          toggleReportPanel={this.toggleReportPanel}
         />
       </div>
     );

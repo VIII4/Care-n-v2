@@ -67,7 +67,11 @@ const OpenCard = (event, type) => {
 CloseCardInnards();
 //#endregion
 
-export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
+export default function UICard({
+  onManualRefreshClick,
+  onReportIssueClick,
+  toggleReportPanel,
+}) {
   //State for toggle
   const [bool, setBool] = useState(false);
 
@@ -109,7 +113,7 @@ export default function UICard({ onManualRefreshClick, onReportIssueClick }) {
             </a>
           </li>
           <li className="button-list-item">
-            <a className="ui-button">
+            <a className="ui-button" onClick={toggleReportPanel}>
               <NewIssueButton size={size} />
             </a>
           </li>
