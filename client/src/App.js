@@ -8,7 +8,7 @@ import ContextBtn from "./components/ContextBtn";
 
 // if data coming from db use state because this information will have to change
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {

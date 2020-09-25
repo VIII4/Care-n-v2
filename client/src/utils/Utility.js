@@ -38,36 +38,6 @@ export default {
     return randomLocation.randomCirclePoint(currentLocation, distance);
   },
 
-  // createRandomData: function (currentLocation) {
-  //   const p = {
-  //     latitude: currentLocation.lat,
-  //     longitude: currentLocation.lng,
-  //   };
-
-  //   sampleData.forEach((sample) => {
-  //     let data = {};
-  //     let r = this.getRandomLocation(p, 2000);
-  //     data.category = sample.category;
-  //     data.descr = sample.descr;
-  //     data.createdby = "testUser";
-  //     data.votecount = 1;
-  //     data.status = "Voting";
-  //     data.zipcode = 94602;
-  //     data.date = Date();
-  //     data.votedby = ["testUserID"];
-  //     data.latlng = {
-  //       lat: r.latitude,
-  //       lng: r.longitude,
-  //     };
-  //     data.images = sample.images;
-
-  //     API.createIssue(data)
-  //       .then((res) => console.log(res))
-  //       .catch((err) => console.log(err));
-  //     // _sampleData.push(data);
-  //   });
-  // },
-
   createRandomData: function (currentLocation) {
     const p = {
       latitude: currentLocation.lat,
@@ -99,5 +69,13 @@ export default {
     API.createIssue(dataset)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+  },
+
+  checkNearLocation: function (checkPoint, currentLocation, distanceKm = 8) {
+    var ky = 40000 / 360;
+    var kx = Math.cos((Math.PI * currentLocation.lat) / 180.0) * ky;
+    var dx = Math.abs(currentLocation.lng - checkPoint.lng) * kx;
+    var dy = Math.abs(currentLocation.lat - checkPoint.lat) * ky;
+    return Math.sqrt(dx * dx + dy * dy) <= distanceKm;
   },
 };

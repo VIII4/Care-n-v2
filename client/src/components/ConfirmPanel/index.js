@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReportForm from "../ReportForm";
 import "./ConfirmPanel.css";
 

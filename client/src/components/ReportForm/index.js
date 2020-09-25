@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./ReportForm.css";
-import { set } from "mongoose";
 import { FaImages } from "react-icons/fa";
 
 export default class ReportForm extends Component {
@@ -100,17 +99,20 @@ export default class ReportForm extends Component {
           {imagePreviewLinks && (
             <>
               {imagePreviewLinks.map((imgSrc) => (
-                <img className="img-thumb" src={imgSrc} alt="Test"></img>
+                <img
+                  key={imgSrc}
+                  className="img-thumb"
+                  src={imgSrc}
+                  alt="Test"
+                ></img>
               ))}
             </>
           )}
           <ul>
-
             <li className="headerReportFormContainer">
               <h3 className="bold">Report</h3>
             </li>
 
-            
             <li>
               <input
                 value={this.state.descValue}
@@ -136,12 +138,17 @@ export default class ReportForm extends Component {
             </li>
 
             <li className="reportFormBtnContainer">
-              <button className="reportFormBtn" onClick={this.handleSubmitClick}> Submit</button>
+              <button
+                className="reportFormBtn"
+                onClick={this.handleSubmitClick}
+              >
+                {" "}
+                Submit
+              </button>
             </li>
           </ul>
         </form>
-      </div >
-
+      </div>
     );
   }
 }

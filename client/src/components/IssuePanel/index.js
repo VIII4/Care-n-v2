@@ -1,12 +1,10 @@
 import React from "react";
 import ReportIssueButton from "../ReportIssueButton";
-import ReportForm from "../ReportForm";
 import "./IssuePanel.css";
 
 export default function IssuesPanel({ onReportIssueClick, submitIssueReport }) {
   return (
     <div className="overViewPanel center">
-
       {/* <div className="overViewPanelInnerContainer">
         <h3 className="bold">Report</h3>
       </div> */}

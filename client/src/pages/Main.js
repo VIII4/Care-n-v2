@@ -2,7 +2,6 @@ import React from "react";
 import Map from "../components/Map";
 import Card from "../components/Card";
 import UICard from "../components/UICard";
-import RefreshBtn from "../components/RefreshBtn";
 import API from "../utils/API";
 import Utility from "../utils/Utility";
 
@@ -40,9 +39,7 @@ class Main extends React.Component {
     };
   }
 
-  //#region Location Methods
-
-  //Track Location
+  //#region Location Based Methods
   getUpdatedLocation = () => {
     if (navigator.geolocation) {
       //Start Tracking Location and update state when changed
@@ -82,14 +79,6 @@ class Main extends React.Component {
     }
   };
 
-  checkNearLocation = (checkPoint, currentLocation, distanceKm = 8) => {
-    var ky = 40000 / 360;
-    var kx = Math.cos((Math.PI * currentLocation.lat) / 180.0) * ky;
-    var dx = Math.abs(currentLocation.lng - checkPoint.lng) * kx;
-    var dy = Math.abs(currentLocation.lat - checkPoint.lat) * ky;
-    return Math.sqrt(dx * dx + dy * dy) <= distanceKm;
-  };
-
   getLocalIssues = () => {
     this.loading(true);
     API.getIssues()
@@ -101,7 +90,7 @@ class Main extends React.Component {
               lat: issue.latlng.lat,
               lng: issue.latlng.lng,
             };
-            return this.checkNearLocation(
+            return Utility.checkNearLocation(
               issueLocation,
               this.state.currentLocation
             );
@@ -310,7 +299,6 @@ class Main extends React.Component {
           onReportIssueClick={this.onReportIssueClick}
           toggleReportPanel={this.toggleReportPanel}
         ></UICard>
-        {/* <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} /> */}
         <Card
           zipCode={zipCode}
           localGovt={localGovt}

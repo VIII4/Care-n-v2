@@ -1,16 +1,14 @@
 import React from "react";
-import axios from "axios";
 import "../Card.css";
 import API from "../../../utils/API";
 
 class ContactsCard extends React.Component {
-  state = {
-    govList: [],
-    newGovObj: [],
-  };
-
   constructor(props) {
     super(props);
+    this.state = {
+      govList: [],
+      newGovObj: [],
+    };
   }
 
   GetGovData = (zipCode = 10029) => {
@@ -78,7 +76,7 @@ class ContactsCard extends React.Component {
           {/* use map to loop through each entry | {obj} data */}
           {this.state.newGovObj.map((element) => {
             return (
-              <ul className="labelContainer">
+              <ul key={element.name} className="labelContainer">
                 <li className="bold">{element.name}</li>
                 <li>{element.office}</li>
                 <li>

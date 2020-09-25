@@ -44,7 +44,7 @@ class ContextBtn extends React.Component {
 
   OpenToggle = () => {
     // toggle boolean value to either close or open card
-    this.state.bool = !this.state.bool;
+    this.setState({ bool: !this.state.bool });
 
     if (this.state.bool) {
       this.OpenCard();

@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import { OverlayView } from "@react-google-maps/api";
 import IssuesPanel from "../IssuePanel";
 import ConfirmPanel from "../ConfirmPanel";
