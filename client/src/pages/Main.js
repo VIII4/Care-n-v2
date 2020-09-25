@@ -112,7 +112,8 @@ class Main extends React.Component {
 
         if (_localIssues.length === 0) {
           Utility.createRandomData(this.state.currentLocation);
-          //this.onManualRefreshClick();
+          this.onManualRefreshClick();
+          return;
         } else {
           this.setState({ localIssues: _localIssues });
         }
@@ -157,8 +158,6 @@ class Main extends React.Component {
   //#region Handler Methods
   onManualRefreshClick = () => {
     this.getLocalIssues();
-
-    alert("Manual Refresh");
   };
 
   setSelectedIssue = (issue) => {
@@ -167,7 +166,7 @@ class Main extends React.Component {
 
   onVoteClick = () => {
     // TESTING - with manual user id entrance, will need to get this from cookies or State
-    let userId = "5f065921f938a110b0b804d0";
+    let userId = "5f6b9dca5d6cd20017d75536";
     API.getUser(userId).then((res) => {
       let userData = res.data;
       API.getSingleIssue(this.state.selectedIssue._id).then((res) => {
