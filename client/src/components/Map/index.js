@@ -92,7 +92,9 @@ class Map extends Component {
 
   onUserMarkerClick = (event) => {
     let toogle = !this.state.showingReportPanel;
-    this.setState({ showingReportPanel: toogle });
+    //Test Toggle here
+    this.props.toggleReportPanel();
+    //this.setState({ showingReportPanel: toogle });
     this.props.setSelectedIssue(null);
   };
 
@@ -109,6 +111,8 @@ class Map extends Component {
       onReportIssueClick,
       onResolveClick,
       submitIssueReport,
+      //Test
+      showReportPanel,
     } = this.props;
 
     return (
@@ -164,13 +168,14 @@ class Map extends Component {
             </InfoWindow>
           )}
           {/* Enable report issue pop up panel and additional details panel*/}
-          {this.state.showingReportPanel && (
+          {showReportPanel && (
             <ReportPanel
               currentLocation={currentLocation}
               onReportIssueClick={onReportIssueClick}
               submitIssueReport={submitIssueReport}
             />
           )}
+          {/* Test */}
         </GoogleMap>
       </LoadScript>
     );

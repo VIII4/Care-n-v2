@@ -1,0 +1,44 @@
+#UIcontainer {
+  z-index: 4;
+}
+
+.UIoverlay {
+  z-index: 4;
+}
+
+.button-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #1c2331;
+}
+
+.button-list-item {
+  margin-top: 0.5rem;
+}
+
+.ui-button {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#right-buttons-list {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 2.5rem;
+}
+
+#profile-button {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 2.35rem;
+}
+
+.ui-button :active {
+  filter: drop-shadow(0rem 0rem 0.5rem #245c70);
+}

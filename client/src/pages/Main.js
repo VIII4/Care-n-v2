@@ -1,8 +1,10 @@
 import React from "react";
 import Map from "../components/Map";
 import Card from "../components/Card";
+import UICard from "../components/UICard";
 import RefreshBtn from "../components/RefreshBtn";
 import API from "../utils/API";
+import Utility from "../utils/Utility";
 
 class Main extends React.Component {
   //Local refresh interval method ref
@@ -32,6 +34,9 @@ class Main extends React.Component {
       localIssues: [],
       // Current Issue Selected
       selectedIssue: null,
+
+      //Test UI
+      showReportPanel: false,
     };
   }
 
@@ -103,6 +108,9 @@ class Main extends React.Component {
           }
         });
         //console.log(_localIssues);
+
+        //TO DO: Check if _localIssues.length is > 0, if not replace with generated data for user location, add new data to DB
+
         this.setState({ localIssues: _localIssues });
         this.props.loading(false);
       })
@@ -143,8 +151,8 @@ class Main extends React.Component {
   //#region Handler Methods
   onManualRefreshClick = () => {
     this.getLocalIssues();
-    //TESTING COMMENT API REQUEST
-    // alert("Testing API Request");
+
+    alert("Manual Refresh");
   };
 
   setSelectedIssue = (issue) => {
@@ -261,6 +269,12 @@ class Main extends React.Component {
       .catch((err) => console.log(err));
   };
 
+  //test
+  toggleReportPanel = () => {
+    let toggle = !this.state.showReportPanel;
+    this.setState({ showReportPanel: toggle });
+  };
+
   //#endregion
 
   //Life Cycle Events
@@ -278,13 +292,20 @@ class Main extends React.Component {
       selectedIssue,
       zipCode,
       localGovt,
+      // Test
+      showReportPanel,
     } = this.state;
 
     return (
       <div>
         {/* visibility can be set in css,but for 
             clarity it is done here instead */}
-        <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} />
+        <UICard
+          onManualRefreshClick={this.onManualRefreshClick}
+          onReportIssueClick={this.onReportIssueClick}
+          toggleReportPanel={this.toggleReportPanel}
+        ></UICard>
+        {/* <RefreshBtn onManualRefreshClick={this.onManualRefreshClick} /> */}
         <Card
           zipCode={zipCode}
           localGovt={localGovt}
@@ -306,6 +327,9 @@ class Main extends React.Component {
           onCommentSubmission={this.onCommentSubmission}
           onResolveClick={this.onReportIssueClick}
           submitIssueReport={this.submitIssueReport}
+          // Test
+          showReportPanel={showReportPanel}
+          toggleReportPanel={this.toggleReportPanel}
         />
       </div>
     );

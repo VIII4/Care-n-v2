@@ -2,7 +2,7 @@
 /* css variables */
 /*               */
 * {
-  --sidebarZindex: 5;
+  --sidebarZindex: 6;
 
   --transparentBackground: rgba(255, 255, 255, 0);
   --translucentBackground: rgba(211, 211, 211, 0.25);
