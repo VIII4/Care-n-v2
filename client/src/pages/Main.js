@@ -107,15 +107,17 @@ class Main extends React.Component {
             );
           }
         });
-        //console.log(_localIssues);
 
         //TO DO: Check if _localIssues.length is > 0, if not replace with generated data for user location, add new data to DB
-        let _sampleData = Utility.createRandomData(this.state.currentLocation);
-        console.log(_sampleData);
+
         if (_localIssues.length === 0) {
-          _localIssues = _sampleData;
+          Utility.createRandomData(this.state.currentLocation);
+          //this.onManualRefreshClick();
+        } else {
+          this.setState({ localIssues: _localIssues });
         }
-        this.setState({ localIssues: _localIssues });
+
+        //this.setState({ localIssues: _localIssues });
         this.props.loading(false);
       })
       .catch((err) => console.log(err));
