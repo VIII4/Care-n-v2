@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import UICard from "../components/UICard";
 import RefreshBtn from "../components/RefreshBtn";
 import API from "../utils/API";
+import Utility from "../utils/Utility";
 
 class Main extends React.Component {
   //Local refresh interval method ref
@@ -107,6 +108,9 @@ class Main extends React.Component {
           }
         });
         //console.log(_localIssues);
+
+        //TO DO: Check if _localIssues.length is > 0, if not replace with generated data for user location, add new data to DB
+
         this.setState({ localIssues: _localIssues });
         this.props.loading(false);
       })
