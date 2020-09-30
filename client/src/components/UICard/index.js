@@ -91,7 +91,7 @@ export default function UICard({
   return (
     <div id="UIcontainer" className="d-flex">
       {/* PANELS */}
-      {!toggleIssuePanel && <CreateIssuePanel />}
+      {toggleIssuePanel && <CreateIssuePanel />}
       {/* END PANELS */}
 
       {/* Single Button on Left */}
@@ -118,7 +118,12 @@ export default function UICard({
             </a>
           </li>
           <li className="button-list-item">
-            <a className="ui-button" onClick={toggleReportPanel}>
+            <a
+              className="ui-button"
+              onClick={() => {
+                setIssuePanel(!toggleIssuePanel);
+              }}
+            >
               <NewIssueButton size={size} />
             </a>
           </li>
