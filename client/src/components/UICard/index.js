@@ -5,7 +5,7 @@ import IssueListButton from "../UIButtons/ListIssueButton";
 import NewIssueButton from "../UIButtons/NewIssueButton";
 import RefreshButton from "../UIButtons/RefreshButton";
 import UserProfileButton from "../UIButtons/UserProfileButton";
-
+import CreateIssuePanel from "../UIPanels/CreateIssuePanel";
 //#region Responsive Helpers
 //Helper function for media querie, set responsive size of UI
 let size;
@@ -74,6 +74,7 @@ export default function UICard({
 }) {
   //State for toggle
   const [bool, setBool] = useState(false);
+  const [toggleIssuePanel, setIssuePanel] = useState(false);
 
   const OpenToggle = () => {
     // toggle boolean value to either close or open card
@@ -89,6 +90,10 @@ export default function UICard({
 
   return (
     <div id="UIcontainer" className="d-flex">
+      {/* PANELS */}
+      {!toggleIssuePanel && <CreateIssuePanel />}
+      {/* END PANELS */}
+
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
         <span id="profile-button">

@@ -4,48 +4,60 @@ import "./IssuePanel.css";
 
 export default function IssuesPanel({ onReportIssueClick, submitIssueReport }) {
   return (
-    <div className="overViewPanel center">
-      {/* <div className="overViewPanelInnerContainer">
-        <h3 className="bold">Report</h3>
-      </div> */}
-
+    <div className="container panel-background panel-position w-100">
       {/* first row */}
-      <div className="buttonPanelContainer">
-        {/* Will need to create hook with issue type state and to report form from button click */}
-        {/* <ReportForm submitIssueReport={submitIssueReport} /> */}
-        <ReportIssueButton
-          issueType="Wildlife"
-          onReportIssueClick={onReportIssueClick}
-        />
-        <ReportIssueButton
-          issueType="Structural"
-          onReportIssueClick={onReportIssueClick}
-        />
-        <ReportIssueButton
-          issueType="Utility"
-          onReportIssueClick={onReportIssueClick}
-        />
-        <ReportIssueButton
-          issueType="Roads"
-          onReportIssueClick={onReportIssueClick}
-        />
+      <div className="row ">
+        <div className="col">
+          <ReportIssueButton
+            issueType="Wildlife"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
+        <div className="col">
+          <ReportIssueButton
+            issueType="Structural"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
+      </div>
+      <div className="row d-flex justify-content-between ">
+        <div className="col-5 w-100 ">
+          <ReportIssueButton
+            issueType="Roads"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
+
+        <div className="col-5 w-100">
+          <ReportIssueButton
+            issueType="Utility"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
+      </div>
+      <div className="row ">
+        <div className="col-6">
+          {" "}
+          <ReportIssueButton
+            issueType="Vandalism"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
+        <div className="col-6">
+          <ReportIssueButton
+            issueType="Trash"
+            onReportIssueClick={onReportIssueClick}
+          />
+        </div>
       </div>
 
       {/* second row */}
-      <div className="buttonPanelContainer center">
-        <ReportIssueButton
-          issueType="Vandalism"
-          onReportIssueClick={onReportIssueClick}
-        />
-        <ReportIssueButton
-          issueType="Trash"
-          onReportIssueClick={onReportIssueClick}
-        />
+      {/* <div className="buttonPanelContainer center">
         <ReportIssueButton
           issueType="Other"
           onReportIssueClick={onReportIssueClick}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
