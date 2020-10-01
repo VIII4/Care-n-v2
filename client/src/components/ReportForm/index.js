@@ -94,61 +94,56 @@ export default class ReportForm extends Component {
   render() {
     const { imagePreviewLinks } = this.state;
     return (
-      <div>
-        <form className="form">
-          {imagePreviewLinks && (
-            <>
-              {imagePreviewLinks.map((imgSrc) => (
-                <img
-                  key={imgSrc}
-                  className="img-thumb"
-                  src={imgSrc}
-                  alt="Test"
-                ></img>
-              ))}
-            </>
-          )}
-          <ul>
-            <li className="headerReportFormContainer">
-              <h3 className="bold">Report</h3>
-            </li>
+      <form className="form">
+        {imagePreviewLinks && (
+          <>
+            {imagePreviewLinks.map((imgSrc) => (
+              <img
+                key={imgSrc}
+                className="img-thumb"
+                src={imgSrc}
+                alt="Test"
+              ></img>
+            ))}
+          </>
+        )}
+        <ul>
+          <li className="headerReportFormContainer">
+            <h3 className="bold">Report</h3>
+          </li>
 
-            <li>
-              <input
-                value={this.state.descValue}
-                name="descValue"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="Description"
-              />
+          <li>
+            <input
+              value={this.state.descValue}
+              name="descValue"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="Description"
+            />
 
-              <input
-                className="image-input"
-                type="file"
-                id="multi"
-                onChange={this.handleImageLoad}
-                multiple
-              />
+            <input
+              className="image-input"
+              type="file"
+              id="multi"
+              onChange={this.handleImageLoad}
+              multiple
+            />
 
-              <div className="uploadBtnContainer">
-                <label htmlFor="multi">
-                  <FaImages className="upload-icon" />
-                </label>
-              </div>
-            </li>
+            <div className="uploadBtnContainer">
+              <label htmlFor="multi">
+                <FaImages className="upload-icon" />
+              </label>
+            </div>
+          </li>
 
-            <li className="reportFormBtnContainer">
-              <button
-                className="reportFormBtn"
-                onClick={this.handleSubmitClick}
-              >
-                {" "}
-                Submit
-              </button>
-            </li>
-          </ul>
-        </form>
-      </div>
+          <li className="reportFormBtnContainer">
+            <button className="reportFormBtn" onClick={this.handleSubmitClick}>
+              {" "}
+              Submit
+            </button>
+          </li>
+        </ul>
+      </form>
     );
   }
 }

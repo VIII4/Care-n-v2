@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./style.css";
+import $ from "jquery";
 
+// Panels
+import CreateIssuePanel from "../UIPanels/CreateIssuePanel";
+import ConfirmIssuePanel from "../UIPanels/ConfirmIssuePanel";
+
+//Buttons
 import IssueListButton from "../UIButtons/ListIssueButton";
 import NewIssueButton from "../UIButtons/NewIssueButton";
 import RefreshButton from "../UIButtons/RefreshButton";
 import UserProfileButton from "../UIButtons/UserProfileButton";
-import CreateIssuePanel from "../UIPanels/CreateIssuePanel";
+
 //#region Responsive Helpers
 //Helper function for media querie, set responsive size of UI
 let size;
@@ -74,7 +80,7 @@ export default function UICard({
 }) {
   //State for toggle
   const [bool, setBool] = useState(false);
-  const [toggleIssuePanel, setIssuePanel] = useState(false);
+  const [toggleConfirmPanel, setConfirmPanel] = useState(false);
 
   const OpenToggle = () => {
     // toggle boolean value to either close or open card
@@ -88,11 +94,29 @@ export default function UICard({
     }
   };
 
+  const toggleIssuePanel = () => {
+    //if confirm panel is NOT open, do nothing
+    if (!toggleConfirmPanel) {
+      $(".issue-panel").toggleClass("open");
+    } else {
+      $(".confirm-panel").toggleClass("open");
+      setConfirmPanel(false);
+    }
+  };
+
+  const handleIssueSelect = () => {
+    //if confirm panel is NOT open, do nothing
+    setConfirmPanel(true);
+    $(".issue-panel").toggleClass("open");
+    $(".confirm-panel").toggleClass("open");
+  };
+
   return (
     <div id="UIcontainer" className="d-flex">
-      {/* PANELS */}
-      {toggleIssuePanel && <CreateIssuePanel />}
-      {/* END PANELS */}
+      {/* TO DO: Need to pass selected issue type to confirm panel */}
+      <ConfirmIssuePanel />
+      {/* TO DO: need to pass click handler to create issue panel */}
+      <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
 
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
@@ -102,7 +126,6 @@ export default function UICard({
           </a>
         </span>
       </div>
-
       {/* List of buttons on Right */}
       <div id="right-buttons-list" className="UIoverlay align-self-end">
         <ul className="button-list ">
@@ -118,12 +141,7 @@ export default function UICard({
             </a>
           </li>
           <li className="button-list-item">
-            <a
-              className="ui-button"
-              onClick={() => {
-                setIssuePanel(!toggleIssuePanel);
-              }}
-            >
+            <a className="ui-button" onClick={toggleIssuePanel}>
               <NewIssueButton size={size} />
             </a>
           </li>
