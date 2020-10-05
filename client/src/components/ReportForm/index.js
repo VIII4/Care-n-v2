@@ -163,6 +163,7 @@ export default class ReportForm extends Component {
             <button
               type="button"
               className="btn blue-gradient btn-block btn-rounded z-depth-1"
+              onClick={this.handleSubmitClick}
             >
               Submit
             </button>
