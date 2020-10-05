@@ -158,8 +158,8 @@ export default class ReportForm extends Component {
           </div>
         </div>
 
-        <div className="row d-flex align-items-center mb-4">
-          <div className="text-center mb-2 col-md-12">
+        <div className="row d-flex align-items-center mb-1">
+          <div className="text-center mb-1 col-md-12">
             <button
               type="button"
               className="btn blue-gradient btn-block btn-rounded z-depth-1"
