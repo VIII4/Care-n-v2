@@ -19,7 +19,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Trash");
+            }}
           >
             <FaTrashAlt className="btn-icon" />
             Trash
@@ -29,7 +31,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Structural");
+            }}
           >
             <FaBuilding className="btn-icon" />
             Struct
@@ -39,7 +43,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Vandalism");
+            }}
           >
             <FaPaintRoller className="btn-icon" />
             Vandal
@@ -52,7 +58,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Nature");
+            }}
           >
             <FaTree className="btn-icon" />
             Nature
@@ -62,7 +70,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Utility");
+            }}
           >
             <FaPlug className="btn-icon" />
             Utility
@@ -72,7 +82,9 @@ export default function CreateIssuePanel({ handleIssueSelect }) {
           <button
             type="button"
             class="btn-issue btn btn-elegant"
-            onClick={handleIssueSelect}
+            onClick={() => {
+              handleIssueSelect("Roads");
+            }}
           >
             <FaRoad className="btn-icon" />
             Roads

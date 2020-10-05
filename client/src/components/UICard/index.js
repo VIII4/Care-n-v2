@@ -81,6 +81,7 @@ export default function UICard({
   //State for toggle
   const [bool, setBool] = useState(false);
   const [toggleConfirmPanel, setConfirmPanel] = useState(false);
+  const [issueType, setIssueType] = useState(null);
 
   const OpenToggle = () => {
     // toggle boolean value to either close or open card
@@ -104,9 +105,10 @@ export default function UICard({
     }
   };
 
-  const handleIssueSelect = () => {
+  const handleIssueSelect = (type) => {
     //if confirm panel is NOT open, do nothing
     setConfirmPanel(true);
+    setIssueType(type);
     $(".issue-panel").toggleClass("open");
     $(".confirm-panel").toggleClass("open");
   };
@@ -114,7 +116,7 @@ export default function UICard({
   return (
     <div id="UIcontainer" className="d-flex">
       {/* TO DO: Need to pass selected issue type to confirm panel */}
-      <ConfirmIssuePanel />
+      <ConfirmIssuePanel typeSelected={issueType} />
       {/* TO DO: need to pass click handler to create issue panel */}
       <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
 
