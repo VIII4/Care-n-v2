@@ -121,7 +121,7 @@ export default function UICard({
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
         <span id="profile-button">
-          <a className="ui-button">
+          <a href="#/" className="ui-button">
             <UserProfileButton size={size} />
           </a>
         </span>
@@ -130,10 +130,11 @@ export default function UICard({
       <div id="right-buttons-list" className="UIoverlay align-self-end">
         <ul className="button-list ">
           <li className="button-list-item d-flex justify-content-end">
-            <a className="ui-button" onClick={OpenToggle}>
+            <a href="#/" className="ui-button" onClick={OpenToggle}>
               <IssueListButton size={size} />
             </a>
             <a
+              href="#/"
               className="ui-button align-self-center"
               onClick={onManualRefreshClick}
             >
@@ -141,7 +142,7 @@ export default function UICard({
             </a>
           </li>
           <li className="button-list-item">
-            <a className="ui-button" onClick={toggleIssuePanel}>
+            <a href="#/" className="ui-button" onClick={toggleIssuePanel}>
               <NewIssueButton size={size} />
             </a>
           </li>
