@@ -102,7 +102,7 @@ export default class ReportForm extends Component {
           {imagePreviewLinks && (
             <>
               {imagePreviewLinks.map((imgSrc) => (
-                <div class="col-3 ">
+                <div class="col ">
                   <img
                     key={imgSrc}
                     className="img-fluid img-upload"

@@ -114,7 +114,7 @@ export default function UICard({
   };
 
   return (
-    <div id="UIcontainer" className="d-flex">
+    <div id="UIcontainer" className="d-flex justify-content-center">
       {/* TO DO: Need to pass selected issue type to confirm panel */}
       <ConfirmIssuePanel typeSelected={issueType} />
       {/* TO DO: need to pass click handler to create issue panel */}
