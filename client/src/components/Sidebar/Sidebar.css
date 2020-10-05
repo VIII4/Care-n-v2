@@ -2,76 +2,78 @@
 /* css variables */
 /*               */
 * {
-    --sidebarZindex: 5;
-    
-    --transparentBackground: rgba(255, 255, 255, 0);
-    --translucentBackground: rgba(211, 211, 211, .25);
+  --sidebarZindex: 5;
+
+  --transparentBackground: rgba(255, 255, 255, 0);
+  --translucentBackground: rgba(211, 211, 211, 0.25);
 }
 
 /* container position must be absolute */
 #openBtnLogoContainer {
-    /* container coordinate */
-    z-index: var(--sidebarZindex);
-    position: absolute;
-    
-    /* container size */
-    width: 100vw;
-    height: auto;
-    max-width:100%;
-    padding-top: 32px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 32px;
+  /* container coordinate */
+  z-index: var(--sidebarZindex);
+  position: absolute;
 
-    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.0));
+  /* container size */
+  width: 100vw;
+  height: auto;
+  max-width: 100%;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
 
-    /* container animation */
-    transition: margin-left .5s;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0)
+  );
+
+  /* container animation */
+  transition: margin-left 0.5s;
 }
 
 /* child is relative to parent container */
 .openbtn {
-    /* button coordinate */
-    float: left;
-    position: relative;
+  /* button coordinate */
+  float: left;
+  position: relative;
 
-    /* ??? */
-    cursor: default;
+  /* ??? */
+  cursor: default;
 
-    /* button text formatting */
-    font-size: 25px;
-    color: black;
+  /* button text formatting */
+  font-size: 25px;
+  color: black;
 
-    /* button size */
+  /* button size */
 
-    /* button color/styling */
-    border: none;
-    border-radius: 2rem;
-    background-color: var(--transparentBackground);
+  /* button color/styling */
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--transparentBackground);
 }
 .openbtn:hover {
-    border-radius: 2rem;
-    background-color: var(--translucentBackground);
+  border-radius: 2rem;
+  background-color: var(--translucentBackground);
 }
 
 /* child is relative to parent container */
-.logo{
-    /* overlay */
-    position: relative;
-    float: right;
+.logo {
+  /* overlay */
+  position: relative;
+  float: right;
 
-    /* background-color: rgb(0, 255, 191); */
-    
-    font-family: "Karla", sans-serif;
-    font-size: larger;
-    font-weight: bolder;
-    color: black;
+  /* background-color: rgb(0, 255, 191); */
+
+  font-family: "Karla", sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  color: black;
 }
 /* .logo:hover {
     color: lightgray;
     text-decoration: none;
 } */
-
 
 /*                        */
 /* macro sidebar settings */
@@ -79,58 +81,62 @@
 
 /* parent tag */
 .sidebar {
-    position: absolute;
-    height: 100vh;
-    width: 0;
-    top: 0;
-    left: 0;
-    z-index: 7;
-    
-    /* color/styling */
-    background-color: rgba(11, 3, 45, 0.95);
-    backdrop-filter: blur(3px);
+  position: absolute;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  left: 0;
+  z-index: 7;
 
-    box-shadow: -9px 0px 18px black inset;
+  /* color/styling */
+  background-color: rgba(11, 3, 45, 0.95);
+  backdrop-filter: blur(3px);
 
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 32px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 32px;
+  box-shadow: -9px 0px 18px black inset;
+
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 32px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 32px;
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 15px;
-    color: white;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white !important;
+  display: block;
+  transition: 0.3s;
 }
 .sidebar a:hover {
-    color: orange;
+  color: orange !important;
 }
 
 .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 20px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 20px;
+  margin-left: 50px;
 }
 
 #sidebarLogo {
-    position: absolute;
-    padding-bottom: 32px;
-    float: left;
-    bottom: 0%;
-    width: auto;
-    color: white;
+  position: absolute;
+  padding-bottom: 32px;
+  float: left;
+  bottom: 0%;
+  width: auto;
+  color: white;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }

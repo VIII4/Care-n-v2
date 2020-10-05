@@ -121,6 +121,7 @@ class LogInCard extends React.Component {
             <p>
               Not a member?<br></br>
               <a
+                href="#/"
                 className="bold"
                 onClick={(event) => {
                   this.OpenCard(event, "signUp");

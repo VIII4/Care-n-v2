@@ -144,7 +144,7 @@ class Map extends Component {
                   icon={this.icons.markerA}
                   clickable={true}
                   onClick={() => {
-                    this.onIssueMarkerClick(issue);
+                    // this.onIssueMarkerClick(issue);
                   }}
                 />
               );

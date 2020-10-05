@@ -94,34 +94,53 @@ export default class ReportForm extends Component {
   render() {
     const { imagePreviewLinks } = this.state;
     return (
-      <div>
-        <form className="form">
+      <form className="text-center  p-4">
+        <p className="h4 mb-3 text-white">
+          {`Report ${this.props.typeSelected} Issue`}
+        </p>
+        <div className="form-row">
           {imagePreviewLinks && (
             <>
               {imagePreviewLinks.map((imgSrc) => (
-                <img
-                  key={imgSrc}
-                  className="img-thumb"
-                  src={imgSrc}
-                  alt="Test"
-                ></img>
+                <div class="col">
+                  <img
+                    key={imgSrc}
+                    className="img-fluid"
+                    src={imgSrc}
+                    alt="Test"
+                  ></img>
+                </div>
               ))}
             </>
           )}
-          <ul>
-            <li className="headerReportFormContainer">
-              <h3 className="bold">Report</h3>
-            </li>
+          {imagePreviewLinks.length === 0 && (
+            <p className="text-light">
+              Add a brief description and upload images for community to
+              resolve!
+            </p>
+          )}
+        </div>
 
-            <li>
+        {/*  */}
+
+        {/* <div className="md-form">
+          <label for="input">Brief Description</label>
+          <input type="text" id="input" class="form-control" placeholder="" />
+        </div> */}
+        <div className="form-row mb-2">
+          <div className="col-10">
+            <div className="md-form">
+              <label for="input">Brief Description</label>
               <input
-                value={this.state.descValue}
-                name="descValue"
-                onChange={this.handleInputChange}
                 type="text"
-                placeholder="Description"
+                id="input"
+                class="form-control"
+                placeholder=""
               />
-
+            </div>
+          </div>
+          <div className="col-auto">
+            <div className="md-form">
               <input
                 className="image-input"
                 type="file"
@@ -135,20 +154,75 @@ export default class ReportForm extends Component {
                   <FaImages className="upload-icon" />
                 </label>
               </div>
-            </li>
+            </div>
+          </div>
+        </div>
 
-            <li className="reportFormBtnContainer">
-              <button
-                className="reportFormBtn"
-                onClick={this.handleSubmitClick}
-              >
-                {" "}
-                Submit
-              </button>
-            </li>
-          </ul>
-        </form>
-      </div>
+        <div className="row d-flex align-items-center mb-4">
+          <div className="text-center mb-2 col-md-12">
+            <button
+              type="button"
+              className="btn blue-gradient btn-block btn-rounded z-depth-1"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+
+        {/*  */}
+      </form>
     );
+    {
+      /* <form className="form">
+{imagePreviewLinks && (
+  <>
+    {imagePreviewLinks.map((imgSrc) => (
+      <img
+        key={imgSrc}
+        className="img-thumb"
+        src={imgSrc}
+        alt="Test"
+      ></img>
+    ))}
+  </>
+)}
+<ul>
+  <li className="headerReportFormContainer">
+    <h3 className="bold">Report</h3>
+  </li>
+
+  <li>
+    <input
+      value={this.state.descValue}
+      name="descValue"
+      onChange={this.handleInputChange}
+      type="text"
+      placeholder="Description"
+    />
+
+    <input
+      className="image-input"
+      type="file"
+      id="multi"
+      onChange={this.handleImageLoad}
+      multiple
+    />
+
+    <div className="uploadBtnContainer">
+      <label htmlFor="multi">
+        <FaImages className="upload-icon" />
+      </label>
+    </div>
+  </li>
+
+  <li className="reportFormBtnContainer">
+    <button className="reportFormBtn" onClick={this.handleSubmitClick}>
+      {" "}
+      Submit
+    </button>
+  </li>
+</ul>
+</form> */
+    }
   }
 }

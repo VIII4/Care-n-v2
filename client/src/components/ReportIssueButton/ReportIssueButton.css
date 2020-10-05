@@ -1,23 +1,22 @@
 /* ReportIssueButton */
-
+.text-font {
+  font-size: 1.25rem;
+}
 .reportBtn {
-    /* text */
-    font-size: 1.5rem;
-    color: black;
-    
-    
-    /* btn size */
-    width: 3rem;
-    height: 3rem;
+  /* text */
+  font-size: 1.5rem;
+  color: black;
 
-    /* background */
-    background-color: white;
-    /* background-color: rgba(11, 3, 45, 0.95); */
-    backdrop-filter: blur(3px);
-    padding: .25rem;
-    border-radius: 3rem;
+  /* btn size */
+
+  /* background */
+  background-color: white;
+  /* background-color: rgba(11, 3, 45, 0.95); */
+
+  padding: 0.25rem;
+  border-radius: 1.5rem;
 }
 
 .reportBtnInnerContainer {
-    padding: .25rem;
+  padding: 0.25rem;
 }

@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import "./style.css";
+import $ from "jquery";
 
+// Panels
+import CreateIssuePanel from "../UIPanels/CreateIssuePanel";
+import ConfirmIssuePanel from "../UIPanels/ConfirmIssuePanel";
+
+//Buttons
 import IssueListButton from "../UIButtons/ListIssueButton";
 import NewIssueButton from "../UIButtons/NewIssueButton";
 import RefreshButton from "../UIButtons/RefreshButton";
@@ -74,6 +80,8 @@ export default function UICard({
 }) {
   //State for toggle
   const [bool, setBool] = useState(false);
+  const [toggleConfirmPanel, setConfirmPanel] = useState(false);
+  const [issueType, setIssueType] = useState(null);
 
   const OpenToggle = () => {
     // toggle boolean value to either close or open card
@@ -87,25 +95,48 @@ export default function UICard({
     }
   };
 
+  const toggleIssuePanel = () => {
+    //if confirm panel is NOT open, do nothing
+    if (!toggleConfirmPanel) {
+      $(".issue-panel").toggleClass("open");
+    } else {
+      $(".confirm-panel").toggleClass("open");
+      setConfirmPanel(false);
+    }
+  };
+
+  const handleIssueSelect = (type) => {
+    //if confirm panel is NOT open, do nothing
+    setConfirmPanel(true);
+    setIssueType(type);
+    $(".issue-panel").toggleClass("open");
+    $(".confirm-panel").toggleClass("open");
+  };
+
   return (
     <div id="UIcontainer" className="d-flex">
+      {/* TO DO: Need to pass selected issue type to confirm panel */}
+      <ConfirmIssuePanel typeSelected={issueType} />
+      {/* TO DO: need to pass click handler to create issue panel */}
+      <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
+
       {/* Single Button on Left */}
       <div className="UIoverlay align-self-end">
         <span id="profile-button">
-          <a className="ui-button">
+          <a href="#/" className="ui-button">
             <UserProfileButton size={size} />
           </a>
         </span>
       </div>
-
       {/* List of buttons on Right */}
       <div id="right-buttons-list" className="UIoverlay align-self-end">
         <ul className="button-list ">
           <li className="button-list-item d-flex justify-content-end">
-            <a className="ui-button" onClick={OpenToggle}>
+            <a href="#/" className="ui-button" onClick={OpenToggle}>
               <IssueListButton size={size} />
             </a>
             <a
+              href="#/"
               className="ui-button align-self-center"
               onClick={onManualRefreshClick}
             >
@@ -113,7 +144,7 @@ export default function UICard({
             </a>
           </li>
           <li className="button-list-item">
-            <a className="ui-button" onClick={toggleReportPanel}>
+            <a href="#/" className="ui-button" onClick={toggleIssuePanel}>
               <NewIssueButton size={size} />
             </a>
           </li>
