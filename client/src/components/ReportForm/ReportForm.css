@@ -5,6 +5,7 @@
 
 .img-upload {
   max-height: 20vh;
+  object-fit: cover;
 }
 
 .upload-icon {
