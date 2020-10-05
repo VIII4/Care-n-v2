@@ -115,7 +115,7 @@ export default class ReportForm extends Component {
           )}
           {imagePreviewLinks.length === 0 && (
             <p className="text-light">
-              Add a brief description and upload images for community to
+              Add a brief description and upload images(3 max) for community to
               resolve!
             </p>
           )}
