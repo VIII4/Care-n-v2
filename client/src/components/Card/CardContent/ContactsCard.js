@@ -1,5 +1,6 @@
 import React from "react";
 import "../Card.css";
+import "./ContactsCard.css";
 import API from "../../../utils/API";
 
 class ContactsCard extends React.Component {

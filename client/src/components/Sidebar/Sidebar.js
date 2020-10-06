@@ -87,6 +87,10 @@ class Sidebar extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.CloseCardInnards();
+  }
+
   //                     //
   // program entry point //
   //                     //

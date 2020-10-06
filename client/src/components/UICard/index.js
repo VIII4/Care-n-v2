@@ -113,6 +113,8 @@ export default function UICard({
     $(".confirm-panel").toggleClass("open");
   };
 
+  //OpenToggle();
+
   return (
     <div id="UIcontainer" className="d-flex justify-content-center">
       {/* TO DO: Need to pass selected issue type to confirm panel */}

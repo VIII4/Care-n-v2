@@ -62,6 +62,7 @@ class IssueCard extends React.Component {
     }
   };
 
+  
   render() {
     const { selectedIssue } = this.props;
 
