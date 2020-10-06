@@ -7,7 +7,7 @@ import Loader from "./components/Loader";
 import ContextBtn from "./components/ContextBtn";
 
 // Force full screen at launch
-window.scrollTo(0, 1);
+//window.scrollTo(0, 1);
 
 class App extends Component {
   constructor(props) {
