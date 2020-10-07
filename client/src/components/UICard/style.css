@@ -29,14 +29,14 @@
 
 #right-buttons-list {
   position: absolute;
-  right: 1.5rem;
-  bottom: 2.5rem;
+  right: 20px;
+  bottom: 30px;
 }
 
 #profile-button {
   position: absolute;
-  left: 1.5rem;
-  bottom: 2.35rem;
+  left: 20px;
+  bottom: 25px;
 }
 
 .ui-button :active {
