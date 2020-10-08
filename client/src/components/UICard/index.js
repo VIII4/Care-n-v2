@@ -113,6 +113,8 @@ export default function UICard({
     $(".confirm-panel").toggleClass("open");
   };
 
+  
+
   //OpenToggle();
 
   return (

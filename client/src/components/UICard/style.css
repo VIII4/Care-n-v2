@@ -39,7 +39,7 @@
   bottom: 25px;
 }
 
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 500px) {
   #right-buttons-list {
     visibility: hidden;
   }
