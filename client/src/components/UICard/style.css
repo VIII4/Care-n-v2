@@ -39,6 +39,16 @@
   bottom: 25px;
 }
 
+@media screen and (max-height: 400px) {
+  #right-buttons-list {
+    visibility: hidden;
+  }
+
+  #profile-button {
+    visibility: hidden;
+  }
+}
+
 .ui-button :active {
   filter: drop-shadow(0rem 0rem 0.5rem #245c70);
 }

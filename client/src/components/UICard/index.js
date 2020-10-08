@@ -123,7 +123,7 @@ export default function UICard({
       <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
 
       {/* Single Button on Left */}
-      <div className="UIoverlay align-self-end">
+      <div className="UIoverlay ">
         <span id="profile-button">
           <a href="#/" className="ui-button">
             <UserProfileButton size={size} />
