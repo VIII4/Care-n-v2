@@ -113,15 +113,19 @@ export default function UICard({
     $(".confirm-panel").toggleClass("open");
   };
 
+  
+
+  //OpenToggle();
+
   return (
-    <div id="UIcontainer" className="d-flex">
+    <div id="UIcontainer" className="d-flex justify-content-center">
       {/* TO DO: Need to pass selected issue type to confirm panel */}
       <ConfirmIssuePanel typeSelected={issueType} />
       {/* TO DO: need to pass click handler to create issue panel */}
       <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
 
       {/* Single Button on Left */}
-      <div className="UIoverlay align-self-end">
+      <div className="UIoverlay ">
         <span id="profile-button">
           <a href="#/" className="ui-button">
             <UserProfileButton size={size} />

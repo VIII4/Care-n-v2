@@ -6,7 +6,8 @@ import Sidebar from "./components/Sidebar";
 import Loader from "./components/Loader";
 import ContextBtn from "./components/ContextBtn";
 
-// if data coming from db use state because this information will have to change
+// Force full screen at launch
+//window.scrollTo(0, 1);
 
 class App extends Component {
   constructor(props) {

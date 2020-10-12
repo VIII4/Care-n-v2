@@ -3,6 +3,11 @@
   position: absolute;
 }
 
+.img-upload {
+  max-height: 20vh;
+  object-fit: cover;
+}
+
 .upload-icon {
   color: white;
   font-size: 2rem;

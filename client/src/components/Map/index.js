@@ -129,7 +129,7 @@ class Map extends Component {
           <Marker
             position={currentLocation}
             icon={this.icons.markerB}
-            onClick={this.onUserMarkerClick}
+            //onClick={this.onUserMarkerClick}
           ></Marker>
           {/* Map through local issues and create marker for each*/}
           {localIssues.map((issue, index) => {
@@ -144,7 +144,7 @@ class Map extends Component {
                   icon={this.icons.markerA}
                   clickable={true}
                   onClick={() => {
-                    // this.onIssueMarkerClick(issue);
+                    this.onIssueMarkerClick(issue);
                   }}
                 />
               );
