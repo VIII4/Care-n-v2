@@ -120,9 +120,9 @@ export default function UICard({
   return (
     <div id="UIcontainer" className="d-flex justify-content-center">
       {/* TO DO: Need to pass selected issue type to confirm panel */}
-      <ConfirmIssuePanel typeSelected={issueType} />
+      <ConfirmIssuePanel typeSelected={issueType} toggleIssuePanel={toggleIssuePanel}/>
       {/* TO DO: need to pass click handler to create issue panel */}
-      <CreateIssuePanel handleIssueSelect={handleIssueSelect} />
+      <CreateIssuePanel handleIssueSelect={handleIssueSelect}  toggleIssuePanel={toggleIssuePanel} />
 
       {/* Single Button on Left */}
       <div className="UIoverlay ">
