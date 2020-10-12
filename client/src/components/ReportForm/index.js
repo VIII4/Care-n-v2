@@ -129,12 +129,13 @@ export default class ReportForm extends Component {
         </div> */}
         <div className="form-row mb-2">
           <div className="col-10">
-            <div className="md-form">
+            <div className="md-form ">
               <label for="input">Brief Description</label>
               <input
                 type="text"
+                style={{color: "white"}}
                 id="input"
-                class="form-control"
+                class="form-control description"
                 placeholder=""
               />
             </div>

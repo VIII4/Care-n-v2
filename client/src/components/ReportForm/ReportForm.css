@@ -1,5 +1,8 @@
+
+
 .image-input {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
   position: absolute;
 }
 
