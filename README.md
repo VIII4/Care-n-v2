@@ -1,6 +1,8 @@
-# Project: Care'n
+# Project: Care'n v2 
+This is an individual refactor of previous group project held at https://github.com/VIII4/UCB_groupProject3, all refactors and feature improvements done by me.
 
 **(Full Stack MERN Application bootstraped by Create-react-app framework and powered by Google maps API.)**
+
 
 ## Overview
 
@@ -38,4 +40,6 @@
 - Mlab
 - Cloudinary
 
-#### Here is a link to deployed app: [Care'n Deployed!](https://caren-app.herokuapp.com/)
+#### Here is a link to deployed app: [Care'n v2 Deployed!](https://care-n.herokuapp.com/)
+
+#### For comparison here is the original deployed app: [Original Care'n Deployed!](https://caren-app.herokuapp.com/)
