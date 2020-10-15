@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./ReportForm.css";
-import { FaImages } from "react-icons/fa";
+import { FaImages  } from "react-icons/fa";
+import { IoIosClose  } from "react-icons/io";
+
 
 export default class ReportForm extends Component {
   constructor(props) {
@@ -95,6 +97,9 @@ export default class ReportForm extends Component {
     const { imagePreviewLinks } = this.state;
     return (
       <form className="text-center  p-4">
+        <div className="btn-close">
+        <button type="button" class="btn blue-gradient btn-rounded waves-effect px-2 py-1" onClick={this.props.toggleIssuePanel}><IoIosClose style={{fontSize: "1.5rem"}}/></button>
+        </div>
         <p className="h4 mb-3 text-white">
           {`Report ${this.props.typeSelected} Issue`}
         </p>
@@ -129,12 +134,13 @@ export default class ReportForm extends Component {
         </div> */}
         <div className="form-row mb-2">
           <div className="col-10">
-            <div className="md-form">
+            <div className="md-form ">
               <label for="input">Brief Description</label>
               <input
                 type="text"
+                style={{color: "white"}}
                 id="input"
-                class="form-control"
+                class="form-control description"
                 placeholder=""
               />
             </div>
@@ -161,6 +167,7 @@ export default class ReportForm extends Component {
         <div className="row d-flex align-items-center mb-1">
           <div className="text-center mb-1 col-md-12">
             <button
+            style={{borderRadius:"15px"}}
               type="button"
               className="btn blue-gradient btn-block btn-rounded z-depth-1"
               onClick={this.handleSubmitClick}

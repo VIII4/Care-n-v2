@@ -54,3 +54,14 @@
   visibility: visible;
   transform-origin: center;
 }
+
+.close-button {
+  position: absolute;
+  top: -3.5rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+div.close-button > button {
+  border-radius: 15px;
+}
