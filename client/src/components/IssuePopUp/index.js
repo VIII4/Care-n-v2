@@ -36,38 +36,48 @@ export default function IssuesPopUp({
 
   return (
     <>
-      <div>
-        <h3>
-          <strong>{selectedIssue.category}</strong>
-        </h3>
-        <hr className="lineColor"></hr>
-        <p>{selectedIssue.descr}</p>
-        {/* TESTING Display images if there are any */}
+      <div className="container">
+        <div className="row">
+          <h3 className="mx-auto">
+            <strong>{selectedIssue.category}</strong>
+          </h3>
+        </div>
+        <div className="row">
+          <p className="mx-auto">{selectedIssue.descr}</p>
+        </div>
+        
         {selectedIssue.images.length > 0 && (
-          <IssueImageGallery
-            images={selectedIssue.images}
-            issueDesc={selectedIssue.descr}
-          />
+            <IssueImageGallery
+              images={selectedIssue.images}
+              issueDesc={selectedIssue.descr}
+            />
         )}
-        <div className="buttonsDiv">
-          <button className="voteButton" type="button" onClick={onVoteClick}>
-            Vote
+
+        <div className="row justify-content-between my-1 p-2">
+          <button style={{borderRadius:"10px"}} className="btn blue-gradient btn-sm btn-rounded z-depth-1" type="button" onClick={onVoteClick}>
+              Vote
           </button>
           <button
-            className="reportButton"
+          style={{borderRadius:"10px"}}
+            className="btn blue-gradient btn-sm btn-rounded z-depth-1"
             type="button"
             onClick={onResolveClick}
           >
             Resolve
           </button>
         </div>
-        <a
-          onClick={(event) => {
-            OpenCard(event);
-          }}
-        >
-          Details
-        </a>
+        
+
+        <div className="row py-2">
+          <a
+            onClick={(event) => {
+              OpenCard(event);
+            }}
+          >
+            Details
+          </a>
+        </div>
+        
       </div>
     </>
   );
