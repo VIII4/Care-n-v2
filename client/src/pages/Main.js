@@ -54,12 +54,13 @@ class Main extends React.Component {
           }));
           API.getZipcode(this.state.currentLocation)
             .then((res) => {
-              let zipCode = res.data.results[0].address_components.find(
-                (component) => {
-                  if (component.types.includes("postal_code")) return component;
-                }
-              ).long_name;
-              this.setState({ zipCode: zipCode });
+              console.log(res);
+              // let zipCode = res.data.results[0].address_components.find(
+              //   (component) => {
+              //     if (component.types.includes("postal_code")) return component;
+              //   }
+              // ).long_name;
+              // this.setState({ zipCode: zipCode });
             })
             .then(() => {
               //this.getLocalGovt();
