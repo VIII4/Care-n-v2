@@ -31,18 +31,22 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// var MONGODB_URI =
-//   process.env.MONGODB_URI ||
-//   "mongodb://carenUser:groupProject3@ds145208.mlab.com:45208/heroku_kgv68jn2";
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/caren";
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/caren";
 
-mongoose
-  .connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
-    if (err) throw err;
-    console.log("Database error occurred");
-  })
-  .then(() => console.log("Database Connected Successfully!"))
-  .catch((err) => console.log(err));
+// connect to mongoDB database
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected");
+});
+
+// on mongoose error
+mongoose.connection.on("error", (err) => {
+  console.log("Database error occurred", err);
+});
 
 //Listen for routes
 app.use("/users", usersRouter);

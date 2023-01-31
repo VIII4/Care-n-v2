@@ -55,15 +55,15 @@ class Main extends React.Component {
           API.getZipcode(this.state.currentLocation)
             .then((res) => {
               console.log(res);
-              // let zipCode = res.data.results[0].address_components.find(
-              //   (component) => {
-              //     if (component.types.includes("postal_code")) return component;
-              //   }
-              // ).long_name;
-              // this.setState({ zipCode: zipCode });
+              let zipCode = res.data.results[0].address_components.find(
+                (component) => {
+                  if (component.types.includes("postal_code")) return component;
+                }
+              ).long_name;
+              this.setState({ zipCode: zipCode });
             })
             .then(() => {
-              //this.getLocalGovt();
+              this.getLocalGovt();
             });
         },
         (error) => console.log(error)
@@ -115,32 +115,69 @@ class Main extends React.Component {
   };
 
   getLocalGovt = () => {
-    API.getGovContacts(this.state.zipCode).then((res) => {
-      let localGovt = [];
-      for (var i = 0; i < res.data.officials.length; i++) {
-        // create an empty object and populate with data
-        let newGovObj = {};
-        newGovObj.office = res.data.offices[i].name
-          ? res.data.offices[i].name
-          : "Info not available";
-        newGovObj.name = res.data.officials[i].name
-          ? res.data.officials[i].name
-          : "Info not available";
-        newGovObj.phones = res.data.officials[i].phones
-          ? res.data.officials[i].phones
-          : "Phone number not available";
-        newGovObj.twitter = res.data.officials[i].channels
-          ? res.data.officials[i].channels[0].id
-          : "Twitter not available";
-        newGovObj.urls = res.data.officials[i].urls
-          ? res.data.officials[i].urls
-          : "Info not available";
+    API.getGovContacts(this.state.zipCode).then(({ data }) => {
+      console.log(data);
 
-        // append newGovObj to arrayList
-        localGovt.push(newGovObj);
-      }
+      const { offices, officials } = data;
+
+      let _officeMap = {};
+      offices.forEach((office) => {
+        office.officialIndices.map((index) => {
+          _officeMap[index] = office.name;
+        });
+      });
+
+      let _officialsMap = officials.map((official, i) => {
+        let _official = {};
+        _official.title = _officeMap[i];
+        _official.name = official.name ? official.name : "Info not available";
+        _official.phones = official.phones
+          ? official.phones
+          : "Phone number not available";
+        _official.urls = official.urls ? official.urls : "Info not available";
+
+        if (official.channels) {
+          _official.twitter = official.channels[0].id
+            ? official.channels[0].id
+            : "Twitter not available";
+        }
+
+        return _official;
+      });
+
+      console.log(_officialsMap);
+
+      let _localGovt = [];
+
+      // for (let j = 0; j < data.offices.length; j++) {
+      //   _officeMap[data.offices[j].name] = data.offices[j].officialIndices;
+      // }
+
+      // for (var i = 0; i < data.officials.length; i++) {
+
+      //   let newGovObj = {};
+      //   newGovObj.office = data.offices[i].name
+      //     ? data.offices[i].name
+      //     : "Info not available";
+      //   newGovObj.name = data.officials[i].name
+      //     ? data.officials[i].name
+      //     : "Info not available";
+      //   newGovObj.phones = data.officials[i].phones
+      //     ? data.officials[i].phones
+      //     : "Phone number not available";
+      //   newGovObj.twitter = data.officials[i].channels
+      //     ? data.officials[i].channels[0].id
+      //     : "Twitter not available";
+      //   newGovObj.urls = data.officials[i].urls
+      //     ? data.officials[i].urls
+      //     : "Info not available";
+
+      //   _localGovt.push(newGovObj);
+      //   console.log(_localGovt);
+      // }
+
       // set current state
-      this.setState({ localGovt: localGovt });
+      this.setState({ localGovt: _localGovt });
     });
   };
   //#endregion
