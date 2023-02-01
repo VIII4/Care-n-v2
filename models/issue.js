@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-mongoose.set("useFindAndModify", false);
+//mongoose.set("useFindAndModify", false);
 
 const issueSchema = new Schema({
   createdby: { type: String, required: true },

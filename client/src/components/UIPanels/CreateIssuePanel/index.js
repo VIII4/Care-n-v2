@@ -8,22 +8,30 @@ import {
   FaTree,
   FaPlug,
 } from "react-icons/fa";
-import { IoIosClose  } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 
 import "./style.css";
 
-
-export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }) {
+export default function CreateIssuePanel({
+  handleIssueSelect,
+  toggleIssuePanel,
+}) {
   return (
     <div className="ui-panel container issue-panel ">
       <div className="close-button">
-        <button type="button" class="btn btn-dark btn-rounded waves-effect px-2 py-1" onClick={toggleIssuePanel}><IoIosClose style={{fontSize: "1.5rem"}}/></button>
+        <button
+          type="button"
+          className="btn btn-dark btn-rounded waves-effect px-2 py-1"
+          onClick={toggleIssuePanel}
+        >
+          <IoIosClose style={{ fontSize: "1.5rem" }} />
+        </button>
       </div>
       <div className="issue-strip row p-2 justify-content-between">
         <div className="col-3  p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Trash");
             }}
@@ -35,7 +43,7 @@ export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }
         <div className="col-3 p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Structural");
             }}
@@ -47,7 +55,7 @@ export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }
         <div className="col-3 p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Vandalism");
             }}
@@ -62,7 +70,7 @@ export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }
         <div className="col-3  p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Nature");
             }}
@@ -74,7 +82,7 @@ export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }
         <div className="col-3 p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Utility");
             }}
@@ -86,7 +94,7 @@ export default function CreateIssuePanel({ handleIssueSelect, toggleIssuePanel }
         <div className="col-3 p-0">
           <button
             type="button"
-            class="btn-issue btn btn-elegant"
+            className="btn-issue btn btn-elegant"
             onClick={() => {
               handleIssueSelect("Roads");
             }}

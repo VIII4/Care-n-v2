@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./ReportForm.css";
-import { FaImages  } from "react-icons/fa";
-import { IoIosClose  } from "react-icons/io";
-
+import { FaImages } from "react-icons/fa";
+import { IoIosClose } from "react-icons/io";
 
 export default class ReportForm extends Component {
   constructor(props) {
@@ -98,7 +97,13 @@ export default class ReportForm extends Component {
     return (
       <form className="text-center  p-4">
         <div className="btn-close">
-        <button type="button" class="btn blue-gradient btn-rounded waves-effect px-2 py-1" onClick={this.props.toggleIssuePanel}><IoIosClose style={{fontSize: "1.5rem"}}/></button>
+          <button
+            type="button"
+            className="btn blue-gradient btn-rounded waves-effect px-2 py-1"
+            onClick={this.props.toggleIssuePanel}
+          >
+            <IoIosClose style={{ fontSize: "1.5rem" }} />
+          </button>
         </div>
         <p className="h4 mb-3 text-white">
           {`Report ${this.props.typeSelected} Issue`}
@@ -107,7 +112,7 @@ export default class ReportForm extends Component {
           {imagePreviewLinks && (
             <>
               {imagePreviewLinks.map((imgSrc) => (
-                <div class="col ">
+                <div className="col ">
                   <img
                     key={imgSrc}
                     className="img-fluid img-upload"
@@ -130,17 +135,17 @@ export default class ReportForm extends Component {
 
         {/* <div className="md-form">
           <label for="input">Brief Description</label>
-          <input type="text" id="input" class="form-control" placeholder="" />
+          <input type="text" id="input" className="form-control" placeholder="" />
         </div> */}
         <div className="form-row mb-2">
           <div className="col-10">
-            <div className="md-form ">
-              <label for="input">Brief Description</label>
+            <div className="md-form">
+              <label type="input">Brief Description</label>
               <input
                 type="text"
-                style={{color: "white"}}
+                style={{ color: "white" }}
                 id="input"
-                class="form-control description"
+                className="form-control description"
                 placeholder=""
               />
             </div>
@@ -167,7 +172,7 @@ export default class ReportForm extends Component {
         <div className="row d-flex align-items-center mb-1">
           <div className="text-center mb-1 col-md-12">
             <button
-            style={{borderRadius:"15px"}}
+              style={{ borderRadius: "15px" }}
               type="button"
               className="btn blue-gradient btn-block btn-rounded z-depth-1"
               onClick={this.handleSubmitClick}

@@ -54,7 +54,7 @@ class Main extends React.Component {
           }));
           API.getZipcode(this.state.currentLocation)
             .then((res) => {
-              console.log(res);
+              //console.log(res);
               let zipCode = res.data.results[0].address_components.find(
                 (component) => {
                   if (component.types.includes("postal_code")) return component;
@@ -116,7 +116,7 @@ class Main extends React.Component {
 
   getLocalGovt = () => {
     API.getGovContacts(this.state.zipCode).then(({ data }) => {
-      console.log(data);
+      //console.log(data);
 
       const { offices, officials } = data;
 
@@ -146,7 +146,6 @@ class Main extends React.Component {
       });
 
       this.setState({ localGovt: _officialsMap });
-
     });
   };
   //#endregion
