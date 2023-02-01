@@ -10,7 +10,7 @@ import mapStyles from "../../utils/mapStyles";
 import ReportPanel from "../ReportPanel";
 import IssuesPopUp from "../IssuePopUp";
 
-const API_KEY = `AIzaSyAlo05wNKIX0KloedL8b3ux0RTS77YmOAA`;
+const API_KEY = `${process.env.REACT_APP_GOOGLE_KEY}`;
 
 class Map extends Component {
   constructor(props) {

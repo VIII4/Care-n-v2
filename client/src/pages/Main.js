@@ -145,39 +145,8 @@ class Main extends React.Component {
         return _official;
       });
 
-      console.log(_officialsMap);
+      this.setState({ localGovt: _officialsMap });
 
-      let _localGovt = [];
-
-      // for (let j = 0; j < data.offices.length; j++) {
-      //   _officeMap[data.offices[j].name] = data.offices[j].officialIndices;
-      // }
-
-      // for (var i = 0; i < data.officials.length; i++) {
-
-      //   let newGovObj = {};
-      //   newGovObj.office = data.offices[i].name
-      //     ? data.offices[i].name
-      //     : "Info not available";
-      //   newGovObj.name = data.officials[i].name
-      //     ? data.officials[i].name
-      //     : "Info not available";
-      //   newGovObj.phones = data.officials[i].phones
-      //     ? data.officials[i].phones
-      //     : "Phone number not available";
-      //   newGovObj.twitter = data.officials[i].channels
-      //     ? data.officials[i].channels[0].id
-      //     : "Twitter not available";
-      //   newGovObj.urls = data.officials[i].urls
-      //     ? data.officials[i].urls
-      //     : "Info not available";
-
-      //   _localGovt.push(newGovObj);
-      //   console.log(_localGovt);
-      // }
-
-      // set current state
-      this.setState({ localGovt: _localGovt });
     });
   };
   //#endregion
