@@ -19,7 +19,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.0.0",
+    "@react-google-maps/api": "^2.19.2",
     "axios": "^1.2.3",
     "bcrypt": "^5.0.0",
     "cloudinary": "^1.22.0",
